@@ -23,7 +23,7 @@
 - Handle error / success
 - Print the state in console
 ```javascript
-function MyNodeValidator (node) {
+function MyInputValidator (node) {
   onError() {}
   onSuccess() {}
   printMessage () {}
@@ -35,16 +35,18 @@ node = {
   acceptedConditions: {
     maxLength: {
       value: Number,
-      message: String,
+      errorMessage: String,
+      successMessage: String,
     },
     minLength: {
       value: Number,
-      message: String,
+      errorMessage: String,
+      successMessage: String,
     }
   }
 }
 
 // example call
-const myValidator = new MyNodeValidator(node)
+const myValidator = new MyInputValidator(node)
 myValidator.init()
 ```
